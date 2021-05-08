@@ -10,7 +10,7 @@ def load_theme():
     except KeyError: 
         theme_name = 'tomorrow'
     finally:
-        theme_path = Path(os.getcwd() + '/pure/theme/' + theme_name + '.json')
+        theme_path = Path(os.environ['PURE_EXECUTABLE_PATH'] + '/pure/theme/' + theme_name + '.json')
         with open(str(theme_path), 'r') as theme:
             scheme = json.load(theme)
 
